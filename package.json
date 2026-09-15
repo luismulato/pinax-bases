@@ -1,7 +1,7 @@
 {
-	"name": "notion-bases",
+	"name": "pinax-bases",
 	"version": "1.12.0",
-	"description": "Banco de dados para o seu vault — tabela, kanban, galeria e mais.",
+	"description": "Pínax Bases — bases estilo Notion para Obsidian. Fork de notion-bases (bgarciamoura), GPL-3.0.",
 	"main": "main.js",
 	"type": "module",
 	"scripts": {
@@ -15,7 +15,7 @@
 		"release:major": "node release.mjs major"
 	},
 	"keywords": [],
-	"license": "0-BSD",
+	"license": "GPL-3.0",
 	"devDependencies": {
 		"@bgarciamoura/eslint-plugin-sentence-case": "^1.0.0",
 		"@eslint/js": "9.30.1",
