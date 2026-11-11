@@ -1,10 +1,9 @@
 # Changelog — Pínax Bases
 
-Fork de obsidian-notion-bases-plugin (GPL-3.0). Formato: lo más nuevo arriba.
-Los cambios sin versión todavía están en "Sin publicar" (el instalable se
-genera con `scripts/install-vault.sh`).
+Fork de obsidian-notion-bases-plugin (GPL-3.0). Formato: lo más nuevo arriba. El instalable se genera con
+`scripts/install-vault.sh`.
 
-## Sin publicar (sobre 1.12.0)
+## 1.13.0 — 2026-11-11
 
 ### Agregado
 - **Multi-select: Ajustar texto y Cortar texto.** El menú de columna ofrece

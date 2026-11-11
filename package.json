@@ -1,6 +1,6 @@
 {
 	"name": "pinax-bases",
-	"version": "1.12.0",
+	"version": "1.13.0",
 	"description": "Pínax Bases — bases estilo Notion para Obsidian. Fork de notion-bases (bgarciamoura), GPL-3.0.",
 	"main": "main.js",
 	"type": "module",
