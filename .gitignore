@@ -30,3 +30,6 @@ data.json
 # Test files
 test-evidence
 releases/
+
+# Tablero kanban local (no se publica)
+mng/
