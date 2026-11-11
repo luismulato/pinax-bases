@@ -2003,8 +2003,33 @@
 	mask-image: none;
 }
 
+/* Select / Status (um chip só): o chip encolhe e mostra "…" */
 .nb-td--clip .nb-select-badge {
+	display: block;
+	flex-shrink: 1;
+	min-width: 0;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.nb-clip-hard .nb-td--clip .nb-select-badge {
+	text-overflow: clip;
+}
+
+/* Multiselect: cada chip mantém o tamanho; o corte é do contêiner */
+.nb-td--clip .nb-cell-multiselect .nb-select-badge {
+	display: inline-flex;
 	flex-shrink: 0;
+	max-width: none;
+	overflow: visible;
+}
+
+/* Select / Status com wrap: o texto do chip quebra em várias linhas */
+.nb-table--wrap .nb-select-badge,
+.nb-td--wrap .nb-select-badge {
+	white-space: normal;
+	word-break: break-word;
 }
 
 /* Cabeçalho estreitável (issue #51): somente colunas com largura definida
@@ -5853,4 +5878,27 @@ body.nb-tl-resizing.nb-tl-resizing.nb-tl-resizing * {
 	margin-top: 16px;
 	color: var(--text-muted);
 	font-size: var(--font-ui-smaller);
+}
+
+/* ── Coluna Name (_title): wrap / clip ────────────────────────────────────── */
+
+/* o wrapper do conteúdo precisa poder encolher, senão o nowrap do texto
+   impõe a largura da coluna (e o clip não consegue cortar) */
+.nb-title-cell {
+	flex: 1 1 auto;
+	width: 100%;
+	min-width: 0;
+}
+
+.nb-header-title .nb-title-label {
+	width: auto;
+	padding: 0;
+	flex: 1;
+	min-width: 0;
+}
+
+.nb-header-title .nb-title-label .nb-header-name {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }

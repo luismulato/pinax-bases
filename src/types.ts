@@ -106,6 +106,8 @@ export interface ViewConfig {
 	sorts: SortConfig[]
 	hiddenColumns: string[]
 	columnWidths: Record<string, number>
+	titleWrap?: boolean   // Name column: wrap text onto several lines
+	titleClip?: boolean   // Name column: truncate at the cell boundary (wins over wrap)
 	activePills?: { id: string; columnId: string; operator: FilterOperator; value: string; conjunction?: 'and' | 'or' }[]
 	pinnedColumnId?: string | null
 	columnOrder?: string[]

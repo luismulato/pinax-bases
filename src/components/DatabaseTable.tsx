@@ -107,10 +107,12 @@ interface VirtualTbodyProps {
 	onRowDrop?: (filePath: string) => void
 	conditionalFormats?: ConditionalFormatRule[]
 	schema?: ColumnSchema[]
+	titleWrap?: boolean
+	titleClip?: boolean
 	disableVirtual?: boolean
 }
 
-function VirtualTbody({ scrollRef, rowHeight, rows, stickyMap, isMobile, setEditingCell, setContextMenuFile, longPressRef, columns, onAddRow, hierarchyMap, onToggleExpand, onAddSubRow, expandedSet, allExpanded, rowDragEnabled, dragOverPath, onRowDragStart, onRowDragOver, onRowDragEnd, onRowDrop, conditionalFormats, schema, disableVirtual }: VirtualTbodyProps) {
+function VirtualTbody({ scrollRef, rowHeight, rows, stickyMap, isMobile, setEditingCell, setContextMenuFile, longPressRef, columns, onAddRow, hierarchyMap, onToggleExpand, onAddSubRow, expandedSet, allExpanded, rowDragEnabled, dragOverPath, onRowDragStart, onRowDragOver, onRowDragEnd, onRowDrop, conditionalFormats, schema, titleWrap, titleClip, disableVirtual }: VirtualTbodyProps) {
 	const { startIdx, endIdx, topPad } = useVirtualScroll(scrollRef, rowHeight, disableVirtual)
 	const visibleRows = rows.slice(startIdx, Math.min(rows.length, endIdx))
 	const bottomPad = Math.max(0, (rows.length - Math.min(rows.length, endIdx)) * rowHeight)
@@ -148,8 +150,10 @@ function VirtualTbody({ scrollRef, rowHeight, rows, stickyMap, isMobile, setEdit
 									? getConditionalStyle(row.original, cell.column.id, conditionalFormats, schema)
 									: undefined
 								const cellSchema = schema?.find(s => s.id === cell.column.id)
-								const clipCell = !!cellSchema?.clip
-								const wrapCell = !!cellSchema?.wrap && !clipCell
+								const isTitleCol = cell.column.id === '_title'
+								// Name (_title) no tiene entrada en el schema: su modo vive en la vista
+								const clipCell = isTitleCol ? !!titleClip : !!cellSchema?.clip
+								const wrapCell = isTitleCol ? !!titleWrap && !clipCell : !!cellSchema?.wrap && !clipCell
 								return (
 									<td
 										key={cell.id}
@@ -179,7 +183,7 @@ function VirtualTbody({ scrollRef, rowHeight, rows, stickyMap, isMobile, setEdit
 														{isExp ? '▼' : '▶'}
 													</button>
 												) : <span className="nb-hierarchy-toggle-spacer" />}
-												<span style={{ flex: 1 }}>{flexRender(cell.column.columnDef.cell as never, cell.getContext() as never)}</span>
+												<span style={{ flex: 1, minWidth: 0 }}>{flexRender(cell.column.columnDef.cell as never, cell.getContext() as never)}</span>
 												{!isMobile && depth < 3 && (
 													<button className="nb-add-subrow-btn" onClick={e => { e.stopPropagation(); onAddSubRow?.(row.original._title) }} title={t('add_subrow')}>+</button>
 												)}
@@ -524,6 +528,59 @@ function SortPanel({ sorts, schema, onSortChange, onClose, anchorRect, panelRef 
 			)}
 		</div>,
 		activeDocument.body
+	)
+}
+
+// Cabecera de la columna Name: menú con Ajustar texto / Cortar texto
+function TitleHeader({ sorted, onSort, wrap, clip, onToggleWrap, onToggleClip }: {
+	sorted: false | 'asc' | 'desc'
+	onSort: () => void
+	wrap: boolean
+	clip: boolean
+	onToggleWrap: () => void
+	onToggleClip: () => void
+}) {
+	const [open, setOpen] = useState(false)
+	const ref = useRef<HTMLDivElement>(null)
+
+	useEffect(() => {
+		if (!open) return
+		const handler = (e: MouseEvent) => {
+			if (!ref.current?.contains(e.target as Node)) setOpen(false)
+		}
+		activeDocument.addEventListener('mousedown', handler)
+		return () => activeDocument.removeEventListener('mousedown', handler)
+	}, [open])
+
+	return (
+		<div className="nb-column-header" ref={ref}>
+			<div className="nb-header-title">
+				<button className="nb-header-label nb-title-label" onClick={() => setOpen(v => !v)} title={t('name_column')}>
+					<span>📄</span>
+					<span className="nb-header-name">{t('name_column')}</span>
+				</button>
+				<button
+					className={`nb-sort-btn ${sorted ? 'nb-sort-btn--sorted' : ''}`}
+					onClick={e => { e.stopPropagation(); onSort() }}
+					title={sorted === 'asc' ? t('sort_asc_title') : sorted === 'desc' ? t('sort_desc_title') : t('sort_none_title')}
+				>
+					<span className={sorted === 'asc' ? 'nb-sort-chevron--active' : 'nb-sort-chevron'}>⌃</span>
+					<span className={sorted === 'desc' ? 'nb-sort-chevron--active' : 'nb-sort-chevron'}>⌄</span>
+				</button>
+			</div>
+			{open && (
+				<div className="nb-column-menu">
+					<button className="nb-menu-item" onClick={() => { onToggleWrap(); setOpen(false) }}>
+						<span className="nb-menu-item-icon">↵</span>
+						<span>{wrap ? t('disable_wrap_text') : t('enable_wrap_text')}</span>
+					</button>
+					<button className="nb-menu-item" onClick={() => { onToggleClip(); setOpen(false) }}>
+						<span className="nb-menu-item-icon">⋯</span>
+						<span>{clip ? t('disable_clip_text') : t('enable_clip_text')}</span>
+					</button>
+				</div>
+			)}
+		</div>
 	)
 }
 
@@ -1039,23 +1096,16 @@ export function DatabaseTable({ dbFile, manager, externalView, onViewChange }: D
 			enableColumnFilter: true,
 			enableSorting: true,
 			sortingFn: 'text',
-			header: ({ column }) => {
-				const sorted = column.getIsSorted()
-				return (
-					<div className="nb-header-title">
-						<span>📄</span>
-						<span>{t('name_column')}</span>
-						<button
-							className={`nb-sort-btn ${sorted ? 'nb-sort-btn--sorted' : ''}`}
-							onClick={e => { e.stopPropagation(); handleColumnToggleSort('_title') }}
-							title={sorted === 'asc' ? t('sort_asc_title') : sorted === 'desc' ? t('sort_desc_title') : t('sort_none_title')}
-						>
-							<span className={sorted === 'asc' ? 'nb-sort-chevron--active' : 'nb-sort-chevron'}>⌃</span>
-							<span className={sorted === 'desc' ? 'nb-sort-chevron--active' : 'nb-sort-chevron'}>⌄</span>
-						</button>
-					</div>
-				)
-			},
+			header: ({ column }) => (
+				<TitleHeader
+					sorted={column.getIsSorted()}
+					onSort={() => handleColumnToggleSort('_title')}
+					wrap={!!activeView.titleWrap}
+					clip={!!activeView.titleClip}
+					onToggleWrap={() => { void saveView({ ...activeView, titleWrap: !activeView.titleWrap, titleClip: false }) }}
+					onToggleClip={() => { void saveView({ ...activeView, titleClip: !activeView.titleClip, titleWrap: false }) }}
+				/>
+			),
 			cell: info => {
 				const dbFolder = dbFile?.parent?.path ?? ''
 				const fileFolder = info.row.original._file.parent?.path ?? ''
@@ -1063,7 +1113,7 @@ export function DatabaseTable({ dbFile, manager, externalView, onViewChange }: D
 					? fileFolder.slice(dbFolder.length + 1)
 					: ''
 				return (
-					<div>
+					<div className="nb-title-cell">
 						<CellRenderer
 							col={{ id: '_title', name: 'Nome', type: 'title', visible: true }}
 							value={info.getValue<string>()}
@@ -1112,7 +1162,7 @@ export function DatabaseTable({ dbFile, manager, externalView, onViewChange }: D
 		}
 
 		return cols
-	}, [config, orderedSchema, activeView, updateSchema, renameColumn, handleChangeColumnType, manager, dbFile])
+	}, [config, orderedSchema, activeView, saveView, updateSchema, renameColumn, handleChangeColumnType, manager, dbFile])
 
 	// ── Instância da tabela ──────────────────────────────────────────────────
 
@@ -2354,7 +2404,9 @@ export function DatabaseTable({ dbFile, manager, externalView, onViewChange }: D
 					<VirtualTbody
 						scrollRef={tableWrapperRef}
 						rowHeight={activeView.rowHeight === 'compact' ? 28 : activeView.rowHeight === 'tall' ? 64 : 36}
-						disableVirtual={config.schema.some(c => c.wrap && !activeView.hiddenColumns.includes(c.id))}
+						disableVirtual={!!activeView.titleWrap || config.schema.some(c => c.wrap && !activeView.hiddenColumns.includes(c.id))}
+						titleWrap={activeView.titleWrap}
+						titleClip={activeView.titleClip}
 						rows={tableRows as VirtualTbodyProps['rows']}
 						stickyMap={stickyMap}
 						isMobile={isMobile}

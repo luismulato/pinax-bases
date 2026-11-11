@@ -1346,7 +1346,7 @@ export function ColumnHeader({ col, schema, onUpdateSchema, onRenameColumn, onCh
 						</button>
 					))}
 
-					{(col.type === 'text' || col.type === 'title' || col.type === 'url' || col.type === 'email' || col.type === 'phone' || col.type === 'multiselect') && (
+					{(col.type === 'text' || col.type === 'title' || col.type === 'url' || col.type === 'email' || col.type === 'phone' || col.type === 'select' || col.type === 'status' || col.type === 'multiselect') && (
 						<>
 							<button
 								className="nb-menu-item"

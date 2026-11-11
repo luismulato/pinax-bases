@@ -3,6 +3,17 @@
 Fork de obsidian-notion-bases-plugin (GPL-3.0). Formato: lo más nuevo arriba. El instalable se genera con
 `scripts/install-vault.sh`.
 
+## Sin publicar (sobre 1.13.0)
+
+### Agregado
+- **Name: Ajustar texto y Cortar texto.** El encabezado de la columna Name
+  abre un menú con ambos modos (antes no tenía menú). Se guarda por vista
+  (`titleWrap` / `titleClip`). Con Ajustar texto en Name se desactiva la
+  virtualización de filas. `docs/features/07-wrap-clip-columna-name.feature`
+- **Select y Status: Ajustar texto y Cortar texto.** El chip encoge con "…"
+  al cortar y su texto pasa a varias líneas al ajustar; el multi-select no
+  cambia. `docs/features/08-wrap-clip-select.feature`
+
 ## 1.13.0 — 2026-11-11
 
 ### Agregado
