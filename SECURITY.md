@@ -12,7 +12,7 @@
 If you discover a security vulnerability, please report it responsibly:
 
 1. **Do not open a public issue.**
-2. Use GitHub's **private vulnerability reporting**: go to the [Security tab](https://github.com/bgarciamoura/obsidian-notion-bases-plugin/security/advisories/new) and click **Report a vulnerability**.
+2. Use GitHub's **private vulnerability reporting**: go to the [Security tab](https://github.com/luismulato/pinax-bases/security/advisories/new) and click **Report a vulnerability**.
 3. Include as much detail as possible: steps to reproduce, affected versions, and potential impact.
 
 You should receive an initial response within **7 days**. Once confirmed, a fix will be prioritized and released as a patch version.

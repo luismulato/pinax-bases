@@ -1,4 +1,4 @@
-# Contributing to Notion Bases
+# Contributing to Pínax Bases
 
 Thank you for your interest in contributing! This guide will help you get started.
 
@@ -15,8 +15,8 @@ Thank you for your interest in contributing! This guide will help you get starte
 1. Fork and clone the repository:
 
    ```bash
-   git clone https://github.com/<your-username>/obsidian-notion-bases-plugin.git
-   cd obsidian-notion-bases-plugin
+   git clone https://github.com/<your-username>/pinax-bases.git
+   cd pinax-bases
    ```
 
 2. Install dependencies:
@@ -37,17 +37,17 @@ Thank you for your interest in contributing! This guide will help you get starte
    npm run dev
    ```
 
-5. Symlink or copy the built files (`main.js`, `styles.css`, `manifest.json`) into your vault's `.obsidian/plugins/notion-bases/` folder, then enable the plugin in Obsidian settings.
+5. Symlink or copy the built files (`main.js`, `styles.css`, `manifest.json`) into your vault's `.obsidian/plugins/pinax-bases/` folder, then enable the plugin in Obsidian settings.
 
 ## How to contribute
 
 ### Reporting bugs
 
-Use the [Bug report](https://github.com/bgarciamoura/obsidian-notion-bases-plugin/issues/new?template=bug_report.yml) issue template. Include your Obsidian version, plugin version, platform, and steps to reproduce.
+Use the [Bug report](https://github.com/luismulato/pinax-bases/issues/new?template=bug_report.yml) issue template. Include your Obsidian version, plugin version, platform, and steps to reproduce.
 
 ### Suggesting features
 
-Use the [Feature request](https://github.com/bgarciamoura/obsidian-notion-bases-plugin/issues/new?template=feature_request.yml) issue template. Describe the use case and any alternatives you've considered.
+Use the [Feature request](https://github.com/luismulato/pinax-bases/issues/new?template=feature_request.yml) issue template. Describe the use case and any alternatives you've considered.
 
 ### Submitting code
 

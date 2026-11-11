@@ -33,7 +33,10 @@ Fork de obsidian-notion-bases-plugin (GPL-3.0). Formato: lo más nuevo arriba. E
 ### Proceso
 - Ciclo de desarrollo BDD + TDD mínimo (`runbooks/`), historias en
   `docs/features/`, board en `mng/`, instalador `scripts/install-vault.sh`.
-- `releases/` fuera de git.
+- `releases/` y el tablero `mng/` fuera de git (el board queda solo local).
+- README, CONTRIBUTING y SECURITY apuntan a luismulato/pinax-bases, con la
+  atribución al proyecto original (Notion Bases, bgarciamoura); se quitaron los
+  badges, links de donación y `FUNDING.yml` del upstream.
 
 ## 1.12.0
 Última versión del upstream antes del fork. Ver el historial de git.

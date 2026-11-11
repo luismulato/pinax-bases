@@ -1,6 +1,6 @@
 <div align="center">
 
-# Notion Bases for Obsidian
+# Pínax Bases for Obsidian
 
 ### The database engine Obsidian deserves
 
@@ -8,18 +8,13 @@
 
 Turn any folder into a Notion-style database with Table, Board (Kanban), Gallery, List, Calendar, Timeline (Gantt), and Chart views — powered by plain Markdown and frontmatter. Your data stays yours, always.
 
-**Now available in Obsidian's Community Plugins directory** — [install it directly in the app](https://obsidian.md/plugins?id=notion-bases)
+> **Pínax Bases** is a fork of [Notion Bases](https://github.com/bgarciamoura/obsidian-notion-bases-plugin) by [bgarciamoura](https://github.com/bgarciamoura), licensed under GPL-3.0. See [Credits](#credits).
 
-[![GitHub release](https://img.shields.io/github/v/release/bgarciamoura/obsidian-notion-bases-plugin?style=for-the-badge&color=7c3aed)](https://github.com/bgarciamoura/obsidian-notion-bases-plugin/releases/latest)
 [![Obsidian](https://img.shields.io/badge/Obsidian-%E2%89%A5%201.8.7-7c3aed?style=for-the-badge&logo=obsidian&logoColor=white)](https://obsidian.md)
-[![License](https://img.shields.io/github/license/bgarciamoura/obsidian-notion-bases-plugin?style=for-the-badge)](LICENSE)
-[![Downloads](https://img.shields.io/github/downloads/bgarciamoura/obsidian-notion-bases-plugin/total?style=for-the-badge&color=44cc11)](https://github.com/bgarciamoura/obsidian-notion-bases-plugin/releases)
-
-[![Stars](https://img.shields.io/github/stars/bgarciamoura/obsidian-notion-bases-plugin?style=for-the-badge&color=f5c542)](https://github.com/bgarciamoura/obsidian-notion-bases-plugin/stargazers)
-[![Issues](https://img.shields.io/github/issues/bgarciamoura/obsidian-notion-bases-plugin?style=for-the-badge)](https://github.com/bgarciamoura/obsidian-notion-bases-plugin/issues)
+[![License](https://img.shields.io/badge/License-GPL%20v3-blue?style=for-the-badge)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)](CONTRIBUTING.md)
 
-**[Website](https://bgarciamoura.github.io/obsidian-notion-bases-plugin/)** · **[Latest Release](https://github.com/bgarciamoura/obsidian-notion-bases-plugin/releases/latest)** · **[Report Bug](https://github.com/bgarciamoura/obsidian-notion-bases-plugin/issues/new?template=bug_report.yml)** · **[Request Feature](https://github.com/bgarciamoura/obsidian-notion-bases-plugin/issues/new?template=feature_request.yml)**
+**[Latest Release](https://github.com/luismulato/pinax-bases/releases/latest)** · **[Report Bug](https://github.com/luismulato/pinax-bases/issues/new?template=bug_report.yml)** · **[Request Feature](https://github.com/luismulato/pinax-bases/issues/new?template=feature_request.yml)**
 
 </div>
 
@@ -44,13 +39,13 @@ Turn any folder into a Notion-style database with Table, Board (Kanban), Gallery
 
 ---
 
-## Why Notion Bases?
+## Why Pínax Bases?
 
-Obsidian's built-in Bases plugin is great for tables and has its own expression-based formula system. Notion Bases focuses on a different set of trade-offs — more views, more column types, and a spreadsheet-style formula syntax.
+Obsidian's built-in Bases plugin is great for tables and has its own expression-based formula system. Pínax Bases focuses on a different set of trade-offs — more views, more column types, and a spreadsheet-style formula syntax.
 
 ### Views
 
-| View | Notion Bases | Core Bases |
+| View | Pínax Bases | Core Bases |
 |------|:---:|:---:|
 | Table | Yes | Yes |
 | Board / Kanban | **Yes** | No |
@@ -60,11 +55,11 @@ Obsidian's built-in Bases plugin is great for tables and has its own expression-
 | Timeline / Gantt | **Yes** | No |
 | Chart view | **Yes** | No |
 
-> Notion Bases offers **5 exclusive views** that Core Bases doesn't have — Board, Gallery, Calendar, Timeline, and Chart — giving you the flexibility to visualize data the way that fits your workflow.
+> Pínax Bases offers **5 exclusive views** that Core Bases doesn't have — Board, Gallery, Calendar, Timeline, and Chart — giving you the flexibility to visualize data the way that fits your workflow.
 
 ### Data modeling
 
-| Feature | Notion Bases | Core Bases |
+| Feature | Pínax Bases | Core Bases |
 |---------|:---:|:---:|
 | Column types | **18** | 6 |
 | Formulas | Spreadsheet-style (`IF`, `SUM`, `AVG`, `CONCAT`) | Expression-based (JS-like) |
@@ -79,7 +74,7 @@ Obsidian's built-in Bases plugin is great for tables and has its own expression-
 
 ### Table experience
 
-| Feature | Notion Bases | Core Bases |
+| Feature | Pínax Bases | Core Bases |
 |---------|:---:|:---:|
 | Column reordering (drag) | Yes | Yes |
 | Column resizing (drag) | Yes | Yes |
@@ -91,11 +86,11 @@ Obsidian's built-in Bases plugin is great for tables and has its own expression-
 | CSV import / export | **Yes** | No |
 | Bulk actions (delete, duplicate, move) | **Yes** | No |
 
-> Both plugins let you resize, reorder columns and adjust row height. Notion Bases goes further with **column pinning**, **text wrap**, a **persistent aggregation footer**, **multi-column sort with drag-to-reorder priority**, **CSV import/export**, and **bulk row actions**.
+> Both plugins let you resize, reorder columns and adjust row height. Pínax Bases goes further with **column pinning**, **text wrap**, a **persistent aggregation footer**, **multi-column sort with drag-to-reorder priority**, **CSV import/export**, and **bulk row actions**.
 
 ### Shared features
 
-| Feature | Notion Bases | Core Bases |
+| Feature | Pínax Bases | Core Bases |
 |---------|:---:|:---:|
 | Embed database in any note | Yes | Yes |
 | Multiple views per database | Yes | Yes |
@@ -216,20 +211,10 @@ Bar, line, and pie charts rendered as pure SVG. Pick a category column (X axis),
 
 ### Installation
 
-**Via Community Plugins (recommended)**
+**Manual installation** (Pínax Bases is not in the Community Plugins directory)
 
-Notion Bases is available in Obsidian's Community Plugins directory:
-
-1. Open **Settings → Community plugins → Browse**
-2. Search for **"Notion Bases"**
-3. Click **Install**, then **Enable**
-
-Or install it in one click from your browser: [open in Obsidian](https://obsidian.md/plugins?id=notion-bases).
-
-**Manual installation**
-
-1. Download `main.js`, `manifest.json` and `styles.css` from the [latest release](https://github.com/bgarciamoura/obsidian-notion-bases-plugin/releases/latest)
-2. Create `<your-vault>/.obsidian/plugins/notion-bases/`
+1. Download `main.js`, `manifest.json` and `styles.css` from the [latest release](https://github.com/luismulato/pinax-bases/releases/latest)
+2. Create `<your-vault>/.obsidian/plugins/pinax-bases/`
 3. Copy the three files into it
 4. Reload Obsidian and enable the plugin in **Settings → Community plugins**
 
@@ -288,9 +273,11 @@ Open any file in any text editor and your data is right there.
 
 ---
 
-## Support the project
+## Credits
 
-If Notion Bases makes your vault more powerful, consider supporting development:
+Pínax Bases is a fork of **[Notion Bases](https://github.com/bgarciamoura/obsidian-notion-bases-plugin)**, created by **[bgarciamoura](https://github.com/bgarciamoura)** and released under the GPL v3. The original copyright and license notices are preserved in [LICENSE](LICENSE).
+
+If you like the engine, consider supporting the original author:
 
 <div align="center">
 
@@ -299,13 +286,15 @@ If Notion Bases makes your vault more powerful, consider supporting development:
 
 </div>
 
+Pínax Bases is maintained by [luismulato](https://github.com/luismulato) — [https://github.com/luismulato/pinax-bases](https://github.com/luismulato/pinax-bases).
+
 ---
 
 ## Contributing
 
 Contributions are welcome! Please read the [Contributing Guide](CONTRIBUTING.md) before submitting a pull request.
 
-For bugs and feature requests, use the [issue tracker](https://github.com/bgarciamoura/obsidian-notion-bases-plugin/issues).
+For bugs and feature requests, use the [issue tracker](https://github.com/luismulato/pinax-bases/issues).
 
 ---
 
