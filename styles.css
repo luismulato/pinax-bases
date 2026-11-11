@@ -1942,6 +1942,55 @@
 	text-overflow: clip;
 }
 
+/* Multiselect: wrap e clip. Os chips ficam em flex nowrap por padrão, então
+   as regras de texto (white-space/ellipsis) não se aplicam a eles. */
+.nb-table--wrap .nb-cell-multiselect,
+.nb-td--wrap .nb-cell-multiselect {
+	flex-wrap: wrap;
+	overflow: visible;
+	align-items: flex-start;
+	align-content: flex-start;
+	gap: 3px;
+	height: auto;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+.nb-table--wrap .nb-cell-select-wrapper,
+.nb-td--wrap .nb-cell-select-wrapper {
+	height: auto;
+}
+
+/* Declarado depois do wrap de propósito: com a mesma especificidade,
+   o clip vence quando o wrap da view inteira está ligado. */
+.nb-td--clip .nb-cell-select-wrapper {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.nb-td--clip .nb-cell-multiselect {
+	flex-wrap: nowrap;
+	overflow: hidden;
+	align-items: center;
+	height: 100%;
+	min-height: var(--nb-row-height);
+	padding-top: 0;
+	padding-bottom: 0;
+	/* chips não têm text-overflow: ellipsis — um fade na borda direita
+	   faz o papel do "…" e indica que há mais tags */
+	-webkit-mask-image: linear-gradient(to right, #000 calc(100% - 20px), transparent);
+	mask-image: linear-gradient(to right, #000 calc(100% - 20px), transparent);
+}
+
+.nb-clip-hard .nb-td--clip .nb-cell-multiselect {
+	-webkit-mask-image: none;
+	mask-image: none;
+}
+
+.nb-td--clip .nb-select-badge {
+	flex-shrink: 0;
+}
+
 /* Cabeçalho estreitável (issue #51): somente colunas com largura definida
    pelo usuário param de impor min-content — o nome trunca quando faltar
    espaço. Colunas nunca redimensionadas mantêm o auto-ajuste de sempre. */
