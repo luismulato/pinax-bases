@@ -95,6 +95,8 @@ const de: Partial<Record<keyof typeof en, string>> = {
 	configure_relation: 'Relation konfigurieren',
 	settings_clip_ellipsis_name: 'Auslassungspunkte beim Abschneiden von Text anzeigen',
 	settings_clip_ellipsis_desc: 'Wenn deaktiviert, schneiden abgeschnittene Zellen den Text am Zellenrand ohne Auslassungspunkte ab, wie in einer Tabellenkalkulation.',
+	settings_open_on_create_name: 'Notiz beim Erstellen öffnen',
+	settings_open_on_create_desc: 'Öffnet die neue Notiz direkt nach dem Erstellen in einem neuen Tab',
 	format_number: 'Zahl formatieren',
 	format_date: 'Datum formatieren',
 	date_format_title: 'Datumsformat',
@@ -290,6 +292,7 @@ const de: Partial<Record<keyof typeof en, string>> = {
 
 	// Add row/entry
 	add_row: 'Neue Zeile',
+	new_button: 'Neu',
 	add_entry: 'Neuer Eintrag',
 	add_card: 'Neue Karte',
 	new_field: 'Neues Feld',

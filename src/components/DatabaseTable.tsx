@@ -1989,6 +1989,18 @@ export function DatabaseTable({ dbFile, manager, externalView, onViewChange }: D
 					)}
 				</div>
 
+				{/* Borrar seleccionados: aparece solo con filas seleccionadas */}
+				{table.getSelectedRowModel().rows.length > 0 && (
+					<button
+						className="nb-toolbar-btn nb-toolbar-btn--icon nb-delete-selected-btn"
+						onClick={() => { void handleDeleteSelected() }}
+						title={t('delete_selected')}
+						aria-label={t('delete_selected')}
+					>
+						<span className="nb-menu-item-icon">🗑</span>
+					</button>
+				)}
+
 <span className="nb-row-count">
 					{tableRows.length} {tableRows.length === 1 ? t('item_singular').toLowerCase() : t('item_plural').toLowerCase()}
 				</span>
@@ -2087,6 +2099,11 @@ export function DatabaseTable({ dbFile, manager, externalView, onViewChange }: D
 						/>
 					)}
 				</div>
+
+				{/* New note */}
+				<button className="nb-new-btn" onClick={() => { void handleAddRow() }} title={t('new_button')}>
+					{t('new_button')}
+				</button>
 			</div>
 
 		{/* Linha de pills de filtros ativos */}

@@ -95,6 +95,8 @@ const es: Partial<Record<keyof typeof en, string>> = {
 	configure_relation: 'Configurar relación',
 	settings_clip_ellipsis_name: 'Mostrar puntos suspensivos al cortar el texto',
 	settings_clip_ellipsis_desc: 'Cuando está desactivado, las celdas cortadas interrumpen el texto en el borde de la celda sin el carácter de puntos suspensivos, al estilo de hoja de cálculo.',
+	settings_open_on_create_name: 'Abrir la nota al crearla',
+	settings_open_on_create_desc: 'Abre la nota nueva en una pestaña nueva apenas se crea',
 	format_number: 'Formatear número',
 	format_date: 'Formatear fecha',
 	date_format_title: 'Formato de fecha',
@@ -290,6 +292,7 @@ const es: Partial<Record<keyof typeof en, string>> = {
 
 	// Add row/entry
 	add_row: 'Nueva fila',
+	new_button: 'Nuevo',
 	add_entry: 'Nueva entrada',
 	add_card: 'Nueva tarjeta',
 	new_field: 'Nuevo campo',

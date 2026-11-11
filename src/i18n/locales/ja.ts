@@ -95,6 +95,8 @@ const ja: Partial<Record<keyof typeof en, string>> = {
 	configure_relation: 'リレーションを設定',
 	settings_clip_ellipsis_name: 'テキストの切り詰め時に省略記号を表示',
 	settings_clip_ellipsis_desc: 'オフの場合、切り詰められたセルは省略記号を表示せず、スプレッドシートのようにセルの端でテキストを切り取ります。',
+	settings_open_on_create_name: '作成時にノートを開く',
+	settings_open_on_create_desc: 'ノートを作成したらすぐに新しいタブで開きます',
 	format_number: '数値の書式',
 	format_date: '日付の書式',
 	date_format_title: '日付の書式',
@@ -290,6 +292,7 @@ const ja: Partial<Record<keyof typeof en, string>> = {
 
 	// Add row/entry
 	add_row: '新しい行',
+	new_button: '新規',
 	add_entry: '新しいエントリー',
 	add_card: '新しいカード',
 	new_field: '新しいフィールド',

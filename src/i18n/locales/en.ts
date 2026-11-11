@@ -93,6 +93,8 @@ const en = {
 	configure_relation: 'Configure relation',
 	settings_clip_ellipsis_name: 'Show ellipsis when clipping text',
 	settings_clip_ellipsis_desc: 'When off, clipped cells cut the text at the cell edge without the ellipsis character, spreadsheet-style.',
+	settings_open_on_create_name: 'Open note on create',
+	settings_open_on_create_desc: 'Opens the new note in a new tab right after creating it',
 	format_number: 'Format number',
 	format_date: 'Format date',
 	date_format_title: 'Date format',
@@ -288,6 +290,7 @@ const en = {
 
 	// Add row/entry
 	add_row: 'New row',
+	new_button: 'New',
 	add_entry: 'New entry',
 	add_card: 'New card',
 	new_field: 'New field',

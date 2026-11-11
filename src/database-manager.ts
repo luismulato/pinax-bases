@@ -25,6 +25,7 @@ export function sanitizeSegment(s: string): string {
 export class DatabaseManager {
 	readInlineFields = false
 	pageSize = 0
+	openNoteOnCreate = true
 
 	constructor(private app: App, private databaseFileName: string) {}
 
@@ -369,9 +370,15 @@ export class DatabaseManager {
 					config.templateFolder ?? null,
 				).open()
 			})
-			return this.createNote(dbFile, initialFrontmatter, templatePath)
+			return this.openIfEnabled(await this.createNote(dbFile, initialFrontmatter, templatePath))
 		}
-		return this.createNote(dbFile, initialFrontmatter, config.templatePath ?? null)
+		return this.openIfEnabled(await this.createNote(dbFile, initialFrontmatter, config.templatePath ?? null))
+	}
+
+	/** opens the new note in a new tab (not the db's own tab) when the setting is on */
+	private async openIfEnabled(file: TFile): Promise<TFile> {
+		if (this.openNoteOnCreate) await this.app.workspace.getLeaf('tab').openFile(file)
+		return file
 	}
 
 	private folderOf(path: string): string | null {

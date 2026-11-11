@@ -95,6 +95,8 @@ const ptBR: Partial<Record<keyof typeof en, string>> = {
 	configure_relation: 'Configurar relação',
 	settings_clip_ellipsis_name: 'Mostrar reticências ao cortar o texto',
 	settings_clip_ellipsis_desc: 'Quando desativado, as células cortadas interrompem o texto na borda da célula sem o caractere de reticências, no estilo de planilha.',
+	settings_open_on_create_name: 'Abrir a nota ao criar',
+	settings_open_on_create_desc: 'Abre a nota nova em uma aba nova assim que for criada',
 	format_number: 'Formatar número',
 	format_date: 'Formatar data',
 	date_format_title: 'Formato de data',
@@ -290,6 +292,7 @@ const ptBR: Partial<Record<keyof typeof en, string>> = {
 
 	// Add row/entry
 	add_row: 'Nova linha',
+	new_button: 'Novo',
 	add_entry: 'Nova entrada',
 	add_card: 'Novo card',
 	new_field: 'Novo campo',

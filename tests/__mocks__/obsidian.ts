@@ -30,6 +30,9 @@ export class Setting {
 	addExtraButton(): this { return this }
 	addDropdown(): this { return this }
 }
+export class PluginSettingTab {
+	constructor(_app: unknown, _plugin: unknown) {}
+}
 export class Notice { constructor(_msg: string) {} }
 export class MarkdownRenderChild {
 	containerEl: HTMLElement

@@ -11,6 +11,7 @@ export interface NotionBasesSettings {
 	readInlineFields: boolean
 	pageSize: number
 	clipEllipsis: boolean
+	openNoteOnCreate: boolean
 }
 
 export const DEFAULT_SETTINGS: NotionBasesSettings = {
@@ -20,6 +21,7 @@ export const DEFAULT_SETTINGS: NotionBasesSettings = {
 	readInlineFields: false,
 	pageSize: 0,
 	clipEllipsis: true,
+	openNoteOnCreate: true,
 }
 
 export class NotionBasesSettingTab extends PluginSettingTab {
@@ -69,6 +71,19 @@ export class NotionBasesSettingTab extends PluginSettingTab {
 					.onChange(async value => {
 						this.plugin.settings.clipEllipsis = value
 						runtimePrefs.clipEllipsis = value
+						await this.plugin.saveSettings()
+					})
+			)
+
+		new Setting(containerEl)
+			.setName(t('settings_open_on_create_name'))
+			.setDesc(t('settings_open_on_create_desc'))
+			.addToggle(toggle =>
+				toggle
+					.setValue(this.plugin.settings.openNoteOnCreate)
+					.onChange(async value => {
+						this.plugin.settings.openNoteOnCreate = value
+						this.plugin.manager.openNoteOnCreate = value
 						await this.plugin.saveSettings()
 					})
 			)

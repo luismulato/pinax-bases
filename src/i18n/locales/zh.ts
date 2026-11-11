@@ -95,6 +95,8 @@ const zh: Partial<Record<keyof typeof en, string>> = {
 	configure_relation: '配置关联',
 	settings_clip_ellipsis_name: '截断文本时显示省略号',
 	settings_clip_ellipsis_desc: '关闭时，被截断的单元格会在单元格边缘直接截断文本，不显示省略号字符，类似电子表格的效果。',
+	settings_open_on_create_name: '创建时打开笔记',
+	settings_open_on_create_desc: '创建后立即在新标签页中打开新笔记',
 	format_number: '数字格式',
 	format_date: '日期格式',
 	date_format_title: '日期格式',
@@ -290,6 +292,7 @@ const zh: Partial<Record<keyof typeof en, string>> = {
 
 	// Add row/entry
 	add_row: '新建行',
+	new_button: '新建',
 	add_entry: '新建条目',
 	add_card: '新建卡片',
 	new_field: '新字段',

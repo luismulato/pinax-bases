@@ -95,6 +95,8 @@ const fr: Partial<Record<keyof typeof en, string>> = {
 	configure_relation: 'Configurer la relation',
 	settings_clip_ellipsis_name: 'Afficher les points de suspension lors de la troncature du texte',
 	settings_clip_ellipsis_desc: 'Lorsque cette option est désactivée, les cellules tronquées coupent le texte au bord de la cellule sans le caractère de points de suspension, comme dans un tableur.',
+	settings_open_on_create_name: 'Ouvrir la note à la création',
+	settings_open_on_create_desc: 'Ouvre la nouvelle note dans un nouvel onglet dès sa création',
 	format_number: 'Formater le nombre',
 	format_date: 'Formater la date',
 	date_format_title: 'Format de date',
@@ -290,6 +292,7 @@ const fr: Partial<Record<keyof typeof en, string>> = {
 
 	// Add row/entry
 	add_row: 'Nouvelle ligne',
+	new_button: 'Nouveau',
 	add_entry: 'Nouvelle entrée',
 	add_card: 'Nouvelle carte',
 	new_field: 'Nouveau champ',
