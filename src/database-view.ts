@@ -1,4 +1,5 @@
-import { ItemView, TFile, WorkspaceLeaf } from 'obsidian'
+import { ItemView, Menu, TFile, WorkspaceLeaf } from 'obsidian'
+import { AboutModal } from './about-modal'
 import { t } from './i18n'
 import { createElement } from 'react'
 import { createRoot, Root } from 'react-dom/client'
@@ -35,6 +36,15 @@ export class DatabaseView extends ItemView {
 
 	getIcon(): string {
 		return 'table'
+	}
+
+	// Menú "..." de la pestaña: junto a Split right/down agrega "About"
+	onPaneMenu(menu: Menu, source: string): void {
+		super.onPaneMenu(menu, source)
+		menu.addItem(item => item
+			.setTitle(t('about_menu_item'))
+			.setIcon('info')
+			.onClick(() => new AboutModal(this.app, this.plugin.manifest.version).open()))
 	}
 
 	// Restaura estado após reload do workspace

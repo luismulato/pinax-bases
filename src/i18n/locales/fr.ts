@@ -501,7 +501,12 @@ const fr: Partial<Record<keyof typeof en, string>> = {
 	formula_err_not_implemented: 'Fonction non implémentée : $fn()',
 
 	// Plugin
-	plugin_display_name: 'Notion bases',
+	plugin_display_name: 'Pínax bases',
+	about_menu_item: 'À propos',
+	about_plugin_label: 'Ce plugin',
+	about_based_on: 'Basé sur',
+	about_project: 'Projet',
+	about_author: 'Auteur',
 	no_databases_found: 'Aucune base de données trouvée. Utilisez la commande "créer une nouvelle base de données" pour en créer une.',
 
 	// Commands

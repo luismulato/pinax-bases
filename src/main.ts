@@ -30,7 +30,7 @@ export default class NotionBasesPlugin extends Plugin {
 		)
 
 		// Ribbon — selecionar banco de dados
-		this.addRibbonIcon('table', 'Notion bases', () => {
+		this.addRibbonIcon('table', 'Pínax bases', () => {
 			this.openDatabasePicker()
 		})
 

@@ -5836,3 +5836,21 @@ body.nb-tl-resizing.nb-tl-resizing.nb-tl-resizing * {
 	color: var(--text-error);
 	border-color: var(--text-error);
 }
+
+/* ── About ─────────────────────────────────────────────────────────────── */
+
+.nb-about .nb-about-section {
+	margin-top: 12px;
+	padding-top: 8px;
+	border-top: 1px solid var(--background-modifier-border);
+}
+
+.nb-about .nb-about-section p {
+	margin: 4px 0;
+}
+
+.nb-about .nb-about-license {
+	margin-top: 16px;
+	color: var(--text-muted);
+	font-size: var(--font-ui-smaller);
+}

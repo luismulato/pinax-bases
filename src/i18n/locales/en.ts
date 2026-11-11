@@ -499,7 +499,12 @@ const en = {
 	formula_err_not_implemented: 'Function not implemented: $fn()',
 
 	// Plugin
-	plugin_display_name: 'Notion bases',
+	plugin_display_name: 'Pínax bases',
+	about_menu_item: 'About',
+	about_plugin_label: 'This plugin',
+	about_based_on: 'Based on',
+	about_project: 'Project',
+	about_author: 'Author',
 	no_databases_found: 'No databases found. Use the "create new database" command to create one.',
 
 	// Commands

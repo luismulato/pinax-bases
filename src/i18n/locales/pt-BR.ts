@@ -501,7 +501,12 @@ const ptBR: Partial<Record<keyof typeof en, string>> = {
 	formula_err_not_implemented: 'Função não implementada: $fn()',
 
 	// Plugin
-	plugin_display_name: 'Notion bases',
+	plugin_display_name: 'Pínax bases',
+	about_menu_item: 'Sobre',
+	about_plugin_label: 'Este plugin',
+	about_based_on: 'Baseado em',
+	about_project: 'Projeto',
+	about_author: 'Autor',
 	no_databases_found: 'Nenhum banco de dados encontrado. Use o comando "Criar novo banco de dados" para criar um.',
 
 	// Commands

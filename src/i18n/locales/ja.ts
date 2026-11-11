@@ -501,7 +501,12 @@ const ja: Partial<Record<keyof typeof en, string>> = {
 	formula_err_not_implemented: '未実装の関数：$fn()',
 
 	// Plugin
-	plugin_display_name: 'Notion bases',
+	plugin_display_name: 'Pínax bases',
+	about_menu_item: '情報',
+	about_plugin_label: 'このプラグイン',
+	about_based_on: 'ベースプロジェクト',
+	about_project: 'プロジェクト',
+	about_author: '作者',
 	no_databases_found: 'データベースが見つかりません。「新しいデータベースを作成」コマンドを使用して作成してください。',
 
 	// Commands

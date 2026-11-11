@@ -6,6 +6,10 @@ Fork de obsidian-notion-bases-plugin (GPL-3.0). Formato: lo más nuevo arriba. E
 ## 1.13.0 — 2026-11-11
 
 ### Agregado
+- **Popup About** en el menú "..." de la pestaña, después de Split: nombre,
+  URL de GitHub y autor (con links) de Pínax Bases y del proyecto base Notion
+  Bases (bgarciamoura), más la licencia GPL-3.0.
+  `docs/features/06-about-y-nombre.feature`
 - **Multi-select: Ajustar texto y Cortar texto.** El menú de columna ofrece
   ambos modos también para columnas multi-select. Ajustar texto hace que los
   chips pasen a la línea siguiente y la fila crezca en alto; Cortar texto los
@@ -21,6 +25,10 @@ Fork de obsidian-notion-bases-plugin (GPL-3.0). Formato: lo más nuevo arriba. E
 - **Botón de papelera junto a Actions** cuando hay filas seleccionadas; borra
   lo seleccionado igual que Actions > Delete all selected.
   `docs/features/04-borrar-seleccionados-en-header.feature`
+
+### Cambiado
+- **Nombre "Pínax bases"** en la pestaña de la base y en el ribbon (antes
+  "Notion bases"), en los 7 idiomas.
 
 ### Proceso
 - Ciclo de desarrollo BDD + TDD mínimo (`runbooks/`), historias en
