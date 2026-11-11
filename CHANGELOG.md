@@ -1,53 +1,54 @@
 # Changelog — Pínax Bases
 
-Fork de obsidian-notion-bases-plugin (GPL-3.0). Formato: lo más nuevo arriba. El instalable se genera con
-`scripts/install-vault.sh`.
+Fork of obsidian-notion-bases-plugin (GPL-3.0). Format: newest first. The
+installable is built with `scripts/install-vault.sh`.
 
-## Sin publicar (sobre 1.13.0)
+## Unreleased (on top of 1.13.0)
 
-### Agregado
-- **Name: Ajustar texto y Cortar texto.** El encabezado de la columna Name
-  abre un menú con ambos modos (antes no tenía menú). Se guarda por vista
-  (`titleWrap` / `titleClip`). Con Ajustar texto en Name se desactiva la
-  virtualización de filas. `docs/features/07-wrap-clip-columna-name.feature`
-- **Select y Status: Ajustar texto y Cortar texto.** El chip encoge con "…"
-  al cortar y su texto pasa a varias líneas al ajustar; el multi-select no
-  cambia. `docs/features/08-wrap-clip-select.feature`
+### Added
+- **Name: Wrap text and Clip text.** The Name column header now opens a menu
+  with both modes (it had no menu before). The choice is saved per view
+  (`titleWrap` / `titleClip`). Turning on Wrap text for Name disables row
+  virtualization. `docs/features/07-wrap-clip-columna-name.feature`
+- **Select and Status: Wrap text and Clip text.** On clip, the chip shrinks and
+  shows "…"; on wrap, its text flows onto several lines. Multi-select is
+  unchanged. `docs/features/08-wrap-clip-select.feature`
 
 ## 1.13.0 — 2026-11-11
 
-### Agregado
-- **Popup About** en el menú "..." de la pestaña, después de Split: nombre,
-  URL de GitHub y autor (con links) de Pínax Bases y del proyecto base Notion
-  Bases (bgarciamoura), más la licencia GPL-3.0.
+### Added
+- **About popup** in the tab's "..." menu, after Split: name, GitHub URL and
+  author (with links) of Pínax Bases and of the base project Notion Bases
+  (bgarciamoura), plus the GPL-3.0 license.
   `docs/features/06-about-y-nombre.feature`
-- **Multi-select: Ajustar texto y Cortar texto.** El menú de columna ofrece
-  ambos modos también para columnas multi-select. Ajustar texto hace que los
-  chips pasen a la línea siguiente y la fila crezca en alto; Cortar texto los
-  deja en una línea, cortados en el borde de la celda, con degradado a la
-  derecha (se apaga con "Mostrar puntos suspensivos" desactivado). Cortar gana
-  sobre el ajuste de toda la vista. `docs/features/05-wrap-clip-multiselect.feature`
-- **Botón New en el header de la tabla**, a la derecha del formato condicional;
-  crea una nota con el template por defecto. Texto traducido en los 7 idiomas.
-  `docs/features/01-boton-new-en-header.feature`
-- **Abrir la nota al crearla** (ajuste, activado por defecto): la nota nueva se
-  abre en una pestaña nueva. Cubre New, "+ New row", subfila, galería, lista,
-  board, calendar y quick add. `docs/features/03-abrir-nota-al-crear.feature`
-- **Botón de papelera junto a Actions** cuando hay filas seleccionadas; borra
-  lo seleccionado igual que Actions > Delete all selected.
+- **Multi-select: Wrap text and Clip text.** The column menu now offers both
+  modes for multi-select columns too. Wrap text makes chips flow onto the next
+  line and the row grow taller; Clip text keeps them on one line, cut at the
+  cell border, with a fade on the right (turned off when "Show ellipsis when
+  clipping text" is disabled). Clip wins over the view-wide wrap.
+  `docs/features/05-wrap-clip-multiselect.feature`
+- **New button in the table header**, to the right of conditional formatting;
+  creates a note with the default template. Label translated into all 7
+  languages. `docs/features/01-boton-new-en-header.feature`
+- **Open note on create** (setting, on by default): the new note opens in a new
+  tab. Covers New, "+ New row", subrow, gallery, list, board, calendar and
+  quick add. `docs/features/03-abrir-nota-al-crear.feature`
+- **Trash button next to Actions** when rows are selected; deletes the
+  selection the same way as Actions > Delete all selected.
   `docs/features/04-borrar-seleccionados-en-header.feature`
 
-### Cambiado
-- **Nombre "Pínax bases"** en la pestaña de la base y en el ribbon (antes
-  "Notion bases"), en los 7 idiomas.
+### Changed
+- **Name "Pínax bases"** on the base's tab and in the ribbon (previously
+  "Notion bases"), in all 7 languages.
 
-### Proceso
-- Ciclo de desarrollo BDD + TDD mínimo (`runbooks/`), historias en
-  `docs/features/`, board en `mng/`, instalador `scripts/install-vault.sh`.
-- `releases/` y el tablero `mng/` fuera de git (el board queda solo local).
-- README, CONTRIBUTING y SECURITY apuntan a luismulato/pinax-bases, con la
-  atribución al proyecto original (Notion Bases, bgarciamoura); se quitaron los
-  badges, links de donación y `FUNDING.yml` del upstream.
+### Process
+- Minimal BDD + TDD development cycle (`runbooks/`), stories in
+  `docs/features/`, board in `mng/`, installer `scripts/install-vault.sh`.
+- `releases/` and the `mng/` board are kept out of git (the board stays local
+  only).
+- README, CONTRIBUTING and SECURITY point to luismulato/pinax-bases, keeping the
+  attribution to the original project (Notion Bases, bgarciamoura); the
+  upstream badges, donation links and `FUNDING.yml` were removed.
 
 ## 1.12.0
-Última versión del upstream antes del fork. Ver el historial de git.
+Last upstream version before the fork. See the git history.
